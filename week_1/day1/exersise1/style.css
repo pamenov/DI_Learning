@@ -1,0 +1,52 @@
+.yellow {
+    background-color: yellow;
+}
+
+.main_title {
+    border-bottom: 1px solid gray;
+}
+
+ul {
+    margin-left: 16px;
+}
+
+#media {
+    text-align: center;
+}
+
+img {
+    display: block;
+    width: 600px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 32px;
+    border: 5px solid green;
+}
+
+ol {
+    list-style-type: upper-roman;
+}
+
+table {
+    margin-left: 32px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.shity-header {
+    margin-left: auto;
+    margin-right: auto;
+    width: 81%;
+    color: red;
+    border: 1px solid red;
+    text-align: center;
+}
+
+th, td {
+    border: 1px solid black;
+}
+
+td {
+    padding: 8px;
+}

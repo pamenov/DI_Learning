@@ -1,0 +1,30 @@
+.one-movie {
+    display: flex;
+
+    justify-content: start;
+}
+
+
+img {
+    width: 300px;
+    margin-bottom: -4px;
+}
+
+.film-logo {
+/*    display: inline-block;*/
+
+    border: 2px solid black;
+    width: 300px;
+}
+
+.movie-description {
+    margin-left: 16px;
+/*    display: inline-block;*/
+    width: 50%;
+    display: block;
+}
+
+.movie-name {
+    margin: 0px;
+    text-align: center;
+}

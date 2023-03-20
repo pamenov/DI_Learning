@@ -1,0 +1,118 @@
+body {
+    background-image: url("media/wallpaper.jpg");
+    background-size: cover;
+}
+
+nav {
+    color: white;
+    font-size: 2.5em;
+}
+
+/*nav > ul > li {
+    list-style: none;
+}*/
+
+li {
+    list-style: none;
+    display: inline;
+}
+
+nav > li > a {
+    text-transform: uppercase;
+}
+
+a {
+    padding-right: 10px;
+    padding-left: 10px;
+    text-decoration: none;
+    color: #555555;
+}
+
+nav > li > a:hover {
+    background-color: #111111;
+}
+
+#container {
+    color: #777777;
+    width: 60%;
+}
+
+#text-header {
+/*    display: block;*/
+    display: inline;
+    margin-left: 15%;
+    margin-top: 10%;
+    font-family: 'Fasthand', cursive;
+    font-size: 2.5em;
+}
+
+#main-text {
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.2em;
+/*    display: block;*/
+    display: inline;
+    width: 40%;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    width: 80%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/*__________________big devices________________*/
+@media screen and (max-width: 1200px) {
+    nav {
+        background-color: red;
+    }
+
+    nav > li > a {
+        color: white;
+    }
+}
+
+
+/*________________medium devices_______________*/
+@media screen and (max-width: 992px) {
+    #text-header {
+        font-size: 25px;
+    }
+
+    nav {
+        background-color: lightgreen;
+    }
+
+    nav > li > a {
+        color: black;
+    }
+
+    #main-text {
+        display: block;
+    }
+
+    #text-header {
+        display: block;
+    }
+}
+
+/*_______________small devices_________________*/
+@media screen and (max-width: 768px) {
+    #text-header {
+        font-size: 35px;
+    }
+
+    nav {
+        background-color: yellow;
+    }
+
+    nav > li > a {
+        color: black;
+    }
+}

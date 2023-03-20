@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+}
+
+nav {
+    display: inline-block;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #dddddd;
+    font-size: 2.5em;
+    padding: 8px;
+}
+
+.fa-barcode{
+    margin-left: 20px;
+}
+
+#nav-link {
+    margin-right: 16px;
+    text-decoration: none;
+    color: black;
+    float: right;
+}
+
+#nav-link:hover {
+    background-color: #cccccc;
+}
+
+footer > ul > li {
+    display: inline;
+    margin-right: 16px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    background-color: #dddddd;
+    width: 100%;
+    text-align: center;
+}

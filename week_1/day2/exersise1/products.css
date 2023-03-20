@@ -1,0 +1,107 @@
+#content-container {
+    display: block;
+    margin: auto;
+/*    justify-content: space-between;*/
+    padding: 40px;
+/*    background-color: red;*/
+}
+
+.item-card {
+    text-align: center;
+    width: 250px;
+    margin: 40px;
+    margin-left: 65px;
+    display: inline-block;
+}
+
+#picture1 {
+    background-image: url("media/image1.png");
+}
+
+#picture2 {
+    background-image: url("media/image2.png");
+}
+
+#picture3 {
+    background-image: url("media/image3.png");
+}
+
+#picture4 {
+    background-image: url("media/image4.png");
+}
+
+.picture {
+    background-size: cover;
+    display: block;
+    width: 250px;
+    height: 350px;
+    float: center;
+}
+
+.new {
+    display: inline;
+    float: left;
+    margin-left: 8px;
+    margin-top: 8px;
+    border: 1px solid red;
+    width: 60px;
+    height:60px;
+    border-radius: 50%;
+    color: white;
+    background-color: red;
+}
+
+.new > p {
+    padding-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.discount {
+    display: inline;
+    float: right;
+    margin-right: 8px;
+    margin-top: 8px;
+    border: 1px solid green;
+    width: 60px;
+    height:60px;
+    border-radius: 50%;
+    color: white;
+    background-color: green;
+}
+
+.discount > p {
+    padding-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.description {
+    margin: 10px;
+}
+
+.price-block {
+    margin: 10px;
+}
+
+.new-price {
+    font-weight: bold;
+    color: green;
+    font-size: 1.4em;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #555555;
+    padding-bottom: 5px;
+}
+
+button {
+    font-size: 1.4em;
+    color: #aaaaaa;
+    padding: 8px;
+}
+
+button:hover {
+    color: black;
+}

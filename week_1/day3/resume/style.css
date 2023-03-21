@@ -1,0 +1,65 @@
+#resume-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    border: 5px solid black;
+/*    gap: 16px;*/
+}
+
+#left-block {
+    flex: 5;
+    background-color: #fafafa;
+    padding: 32px 16px 0px 16px;
+}
+
+#right-block {
+    flex: 2;
+    background-color: #dadada;
+    text-align: center;
+    color: #666666;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-transform: uppercase;
+}
+
+hr {
+    text-align: center;
+    width: 60%;
+    color: #666666;
+}
+
+.section-header {
+    text-transform: uppercase;
+    border-bottom: 1px solid #cccccc;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.fa-brands {
+    font-size: 48px;
+    color: #666666;
+}
+
+.social-name {
+    color: #666666;
+    margin-top: 8px;
+/*    text-decoration: none;*/
+}
+
+a {
+    text-decoration: none;
+}
+
+#name {
+}
+
+#profession {
+}
+
+#photo {
+    background-size: cover;
+    background-position: center;
+    height: 140px;
+    width: 140px;
+    max-height: 100%;
+    border-radius: 50%;
+
+}

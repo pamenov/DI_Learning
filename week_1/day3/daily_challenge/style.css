@@ -1,0 +1,26 @@
+.square {
+    width: 100px;
+    height: 100px;
+    background: yellow;
+    border: 1px solid black;
+}
+
+#container {
+    display: flex;
+    justify-content: space-between;
+    height: 600px;
+}
+
+#mid-block {
+    align-self: center;
+    display: flex;
+    flex: 1;
+    justify-content: space-evenly;
+}
+
+#left-block, #right-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+

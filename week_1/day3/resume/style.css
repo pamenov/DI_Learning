@@ -1,15 +1,18 @@
+body {
+    margin: 0px;
+}
+
 #resume-container {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    border: 5px solid black;
-/*    gap: 16px;*/
 }
 
 #left-block {
     flex: 5;
     background-color: #fafafa;
-    padding: 32px 16px 0px 16px;
+    padding: 32px 32px 0px 100px;
+    margin: 0px;
 }
 
 #right-block {
@@ -19,6 +22,7 @@
     color: #666666;
     font-family: 'Source Sans Pro', sans-serif;
     text-transform: uppercase;
+    padding-top: 20%;
 }
 
 hr {
@@ -31,6 +35,16 @@ hr {
     text-transform: uppercase;
     border-bottom: 1px solid #cccccc;
     font-family: 'Source Sans Pro', sans-serif;
+    margin-bottom: 0.5em;
+}
+
+.subsection-header {
+    font-family: 'Roboto', sans-serif;
+    margin: 0.2em 0em;
+}
+
+.description, .place, .skill {
+    font-family: 'Roboto', sans-serif;
 }
 
 .fa-brands {
@@ -44,8 +58,13 @@ hr {
 /*    text-decoration: none;*/
 }
 
+.contact-item {
+    font-size: 0.8em;
+}
+
 a {
     text-decoration: none;
+    color: #666666;
 }
 
 #name {
@@ -61,5 +80,17 @@ a {
     width: 140px;
     max-height: 100%;
     border-radius: 50%;
+}
+
+#skills-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+@media screen and (max-width: 868px) {
+    #left-block {
+        padding: 8px;
+    }
 
 }

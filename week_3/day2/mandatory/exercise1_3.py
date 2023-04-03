@@ -28,8 +28,8 @@ class PetDog(Dog):
     ]
 
 
-    def __init__(self, name, age, weight, trained=False):
-       super().__init__(name=name, age=age, weight=weight)
+    def __init__(self, trained=False, **kwargs):
+       super().__init__(**kwargs)
        self.trained = trained
 
     def train(self):

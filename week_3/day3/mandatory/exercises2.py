@@ -7,6 +7,7 @@ from datetime import date, datetime
 from random import choice, randint
 
 import pandas as pd
+from faker import Faker
 from func import summa
 
 
@@ -92,12 +93,68 @@ def time_to_next_holiday():
         date(year=1,day=21, month=9),
         date(year=1,day=13, month=10),
         date(year=1,day=26, month=10),
-        date(year=1,day=8, month=4),
+        date(year=1,day=8, month=10),
         date(year=1,day=11, month=3),
     ]
     today = date.today()
     next_holiday = min(all_holidays, key=difference_without_year)
-    return difference_without_year(next_holiday)
+    return str(difference_without_year(next_holiday)).split(',')[0]
+
+# Exercise 8 : How Old Are You On Jupiter?
+# Instructions
+# Given an age in seconds, calculate how old someone would be on:
+# Earth: orbital period 365.25 Earth days, or 31557600 seconds
+# Mercury: orbital period 0.2408467 Earth years
+# Venus: orbital period 0.61519726 Earth years
+# Mars: orbital period 1.8808158 Earth years
+# Jupiter: orbital period 11.862615 Earth years
+# Saturn: orbital period 29.447498 Earth years
+# Uranus: orbital period 84.016846 Earth years
+# Neptune: orbital period 164.79132 Earth years
+# So if you are told someone is 1,000,000,000 seconds old, the function should output that they are 31.69 Earth-years old.
+
+def planet_age(age_in_seconds, planet):
+    EARTH_PERIOD = 31557600
+    PLANET_COEFF = {
+        "Earth": 1,
+        "Mercury": 0.2408467,
+        "Venus": 0.61519726,
+        "Mars": 1.8808158,
+        "Jupiter": 11.862615,
+        "Saturn": 29.447498,
+        "Uranus": 84.016846,
+        "Neptune": 164.79132,
+    }
+    earth_years = age_in_seconds / EARTH_PERIOD
+    try:
+        planet_years = earth_years / PLANET_COEFF[planet]
+        return planet_years
+    except:
+        raise KeyError("unknown planet")
+
+# Exercise 9 : Faker Module
+# Instructions
+# Install the faker module, and take a look at the documentation 
+# and learn how to properly implement faker in your code.
+# Create an empty list called users. Tip: It should be a list of dictionaries.
+# Create a function that adds new dictionaries to the users list.
+# Each user has the following keys: name, adress, langage_code. Use faker to populate them with fake data.
+
+def add_new_fake_user(users):
+    faker = Faker()
+    new_user = {
+        "name": faker.name(),
+        "address": faker.address(),
+        "langage_code": faker.language_code(),
+    }
+    users.append(new_user)
+
+def proceed_ex_9(length):
+    users = []
+    for _ in range(length):
+        add_new_fake_user(users)
+    return users
+
 
 
 if __name__ == "__main__":
@@ -107,4 +164,6 @@ if __name__ == "__main__":
     # display_date()
     # print(until_new_year())
     # print(life_in_minuts(datetime(year=1034, month=6, day=6)))
-    print(time_to_next_holiday())
+    # print(time_to_next_holiday())
+    # print(planet_age(age_in_seconds=10 ** 9, planet="Earth"))
+    print(proceed_ex_9(10))

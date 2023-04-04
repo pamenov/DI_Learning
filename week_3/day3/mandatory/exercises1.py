@@ -59,11 +59,13 @@ class Currency:
 
     def __iadd__(self, rhs):
         if isinstance(rhs, int):
-            return Currency(self.currency, self.amount + rhs)
+            self.amount += rhs
+            return self
         if not isinstance(rhs, Currency):
             raise TypeError(f"Unsupported operation += between <Currency> and {type(rhs)}")
         if self.currency == rhs.currency:
-            return Currency(self.currency, self.amount + rhs.amount)
+            self.amount += rhs.amount
+            return self
         raise TypeError(f"Cann't use += for <{self.currency}> and <{rhs.currency}>")
 
 

@@ -1,19 +1,19 @@
 1)   SELECT COUNT(*) 
     FROM FirstTab AS ft WHERE ft.id NOT IN ( SELECT id FROM SecondTab WHERE id IS NULL )
 
-My answer - 3
+My answer - 0
 
 2)     SELECT COUNT(*) 
     FROM FirstTab AS ft WHERE ft.id NOT IN ( SELECT id FROM SecondTab WHERE id = 5 )
 
-My answer - 3
+My answer - 2
 
 3)     SELECT COUNT(*) 
     FROM FirstTab AS ft WHERE ft.id NOT IN ( SELECT id FROM SecondTab )
 
-My answer - 2
+My answer - 0
 
 4)     SELECT COUNT(*) 
     FROM FirstTab AS ft WHERE ft.id NOT IN ( SELECT id FROM SecondTab WHERE id IS NOT NULL )
 
-My answer - 3
+My answer - 2

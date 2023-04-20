@@ -1,0 +1,27 @@
+#container {
+    display: flex;
+    border: 1px solid black;
+    width: 120px;
+}
+
+#red {
+    background-color: red;
+
+    display: inline-block;
+}
+
+#blue {
+    background-color: blue;
+    display: inline-block;
+}
+
+#white {
+    display: inline-block;
+    background-color: white;
+}
+
+div > div {
+    height: 100px;
+    width: 40px;
+/*    margin: -4px;*/
+}

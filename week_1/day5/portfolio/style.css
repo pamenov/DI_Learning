@@ -1,7 +1,6 @@
 body {
     margin: 0px;
 }
-
 /*nav {
     background-color: greenyellow;
 }
@@ -9,10 +8,21 @@ body {
 ul {
     display: flex;
 }
-
 li {
     list-style: none;
 }
+
+.table .row:nth-of-type(n+2) {
+    display: none;
+    background-color: red;
+/*    background-color: red;*/
+}
+
+.table.expanded > .row {
+    display: flex;
+}
+
+
 
 /*header {
     height: 300px;

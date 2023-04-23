@@ -6,12 +6,13 @@
     <title>Ебаное животное</title>
 </head>
 <body>
-    <h1>{{name}}</h1>
+    <h1><a href="{% url 'all_animals' %}"> Animals </a></h1>
+    <h2>{{ animal.name }}</h2>
     <ul>
-        <li>Legs - {{legs}}</li>
-        <li>Weight - {{weight}}</li>
-        <li>Height - {{height}}</li>
-        <li>Speed - {{speed}}</li>
+        <li>Legs - {{ animal.legs }}</li>
+        <li>Weight - {{ animal.weight }}</li>
+        <li>Height - {{ animal.height }}</li>
+        <li>Speed - {{ animal.speed }}</li>
     </ul>
 </body>
 </html>

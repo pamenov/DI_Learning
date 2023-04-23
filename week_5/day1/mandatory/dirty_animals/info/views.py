@@ -1,11 +1,11 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
-from . import database
+from .models import Animal, Family
 
 
 def ViewFamily(request, pk):
-    family_members = filter(lambda animal: animal["family"] == pk, database.data["animals"])
+    family_members = Animal.objects.filter(family=pk)
     context = {
         "family": list(family_members)
     }
@@ -16,9 +16,18 @@ def ViewFamily(request, pk):
 
 
 def ViewAnimal(request, pk):
-    for animal in database.data["animals"]:
-        if animal["id"] == pk:
-            context = animal
-            break
+    animal = get_object_or_404(Animal, id=pk)
+    context = {
+        "animal": animal,
+    }
     template = 'animal.html'
-    return render(request, template, context) 
+    return render(request, template, context)
+
+
+def AllAnimals(request):
+    animals = Animal.objects.all()
+    template = 'all_animals.html'
+    context = {
+        "animals": animals,
+    }
+    return render(request, template, context)

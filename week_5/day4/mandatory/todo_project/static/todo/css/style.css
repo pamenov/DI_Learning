@@ -1,0 +1,14 @@
+.category_logo {
+    height: 50px;
+    width: 50px;
+}
+
+.done_mark {
+    font-size: 30px;
+    color: green;
+}
+
+body {
+    background-color: lightblue;
+    font-size: 30px;
+}

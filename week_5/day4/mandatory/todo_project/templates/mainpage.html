@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href={% static 'todo/css/style.css' %}>
+    <title>ToDo list</title>
+</head>
+<body>
+    {% for item, done_tuple in task_list %} 
+        {{ item.title }}
+        {{ item.details }}
+        {{ item.category.name }}
+        <img src={{ item.category.image }} class="category_logo">
+        {% if item.has_been_done %}
+            {{ item.date_completion }}
+            <span class="done_mark"> + </span>
+        {% else %}
+            <span class="done_mark"> - </span>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{done_tuple}}
+            <button type="submit"> Done! </button>
+        </form>
+        {% endif %}   
+        <br>
+    {% endfor %}
+
+</body>
+</html>

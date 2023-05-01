@@ -43,10 +43,6 @@ def AddCategoryView(request):
     form = CategoryForm(request.POST)
     if form.is_valid():
         new_category = form.save()
-        # category_list = form.cleaned_data["category"]
-        # category_objects = [Category.objects.get(name=cat) for cat in category_list]
-        # for cat_obj in category_objects:
-        #     new_gif.categories.add(cat_obj)
         return HttpResponse("Thank you!")
     form = CategoryForm()
     return render(request, template, {"form": form})

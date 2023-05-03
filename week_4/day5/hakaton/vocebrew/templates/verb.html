@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+<body>
+    <div>
+        <h2>Infinitive</h2>
+        {{verb.infinitive}} {{verb.translation}}
+        <audio controls>
+            <source src="{% url 'generate_audio' verb.infinitive %}" type="audio/mpeg">
+        </audio>
+    </div>
+    <div>
+        <h2> Present </h2>
+        {{pronoun.present.single_male}} {{verb.present.single_male}}
+        <audio controls>
+            <source src="{% url 'generate_audio' verb.present.single_male %}" type="audio/mpeg">
+        </audio>
+        <hr>
+        {{pronoun.present.single_female}} {{verb.present.single_female}}
+        <audio controls>
+            <source src="{% url 'generate_audio' verb.present.single_female %}" type="audio/mpeg">
+        </audio>
+        <hr>
+        {{pronoun.present.plural_male}} {{verb.present.plural_male}}
+        <audio controls>
+            <source src="{% url 'generate_audio' verb.present.plural_male %}" type="audio/mpeg">
+        </audio>
+        <hr>
+        {{pronoun.present.plural_female}} {{verb.present.plural_female}}
+        <audio controls>
+            <source src="{% url 'generate_audio' verb.present.plural_female %}" type="audio/mpeg">
+        </audio>
+        <hr>    
+    </div>
+    <div>
+        <h2> Past </h2>
+        <h4> Single </h4>
+        <h4> Plural </h4>
+    </div>
+</body>
+</html>

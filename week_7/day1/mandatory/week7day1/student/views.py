@@ -12,7 +12,11 @@ class StudentList(APIView):
     permission_classes = (IsAdminUser,)
 
     def get(self, request, *args, **kwargs):
-        queryset = Student.objects.all()
+        if "date_joined" in request.query_params:
+            date = request.query_params["date_joined"]
+            queryset = Student.objects.filter(date_added=date)
+        else:
+            queryset = Student.objects.all()
         serializer = StudentSerializer(queryset, many=True)
         return Response(serializer.data, status=HTTP_200_OK)
 

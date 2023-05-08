@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for film in films %}
+        <div class=movie_card>
+            {% include 'includes/film_card.html' with film=film %}
+        </div>
+    {% endfor %}
+{% endblock %}

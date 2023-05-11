@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+
 
 class Department(models.Model):
     name = models.CharField(max_length=30)
@@ -35,3 +37,12 @@ class Task(models.Model):
     due_date = models.DateField()
     completed = models.BooleanField(default=False)
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="tasks")
+
+
+class UserRoles(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="roles")
+    is_admin = models.BooleanField(default=False)
+    admin_in_departments = models.ManyToManyField(Department, null=True, related_name="admins")
+
+    def __str__(self):
+        return str(self.user)

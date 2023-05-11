@@ -19,17 +19,16 @@ def GetAudio(request, word):
 
 def VerbView(request, id):
     verb = get_object_or_404(Verb, id=id)
-    print(verb.hebrew)
-    # category = verb.category
-    category = "пааль"
+    category = str(verb.category)
     root = verb.root
-    print(len(root))
     template_name = "verb.html"
     context = {
         "verb": {
             "infinitive": verb.hebrew,
             "present": verb_forms.get_present_forms(root=root, category=category),
             "past": verb_forms.get_past_forms(root=root, category=category),
-        }
+            "translate": verb.ru_translate
+        },
+        "pronoun": verb_forms.PRONOUN
     }
     return render(request, template_name, context)

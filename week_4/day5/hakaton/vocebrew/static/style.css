@@ -1,0 +1,38 @@
+.word_card {
+  margin-left: 50px;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.pronoun {
+  font-size: 20px;
+  color: #999999;
+}
+
+.audio-player {
+  position: relative;
+  display: inline-block;
+}
+
+.audio-element {
+  display: none;
+}
+
+.play-button {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  transform: translateX(-50%);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: none;
+  background-color: #cccccc;
+  color: black;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+

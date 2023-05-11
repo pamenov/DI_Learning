@@ -1,45 +1,39 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href={% static 'style.css' %}>
     <title></title>
 </head>
 <body>
-    <div>
-        <h2>Infinitive</h2>
-        {{verb.infinitive}} {{verb.translation}}
-        <audio controls>
-            <source src="{% url 'generate_audio' verb.infinitive %}" type="audio/mpeg">
-        </audio>
-    </div>
-    <div>
-        <h2> Present </h2>
-        {{pronoun.present.single_male}} {{verb.present.single_male}}
-        <audio controls>
-            <source src="{% url 'generate_audio' verb.present.single_male %}" type="audio/mpeg">
-        </audio>
-        <hr>
-        {{pronoun.present.single_female}} {{verb.present.single_female}}
-        <audio controls>
-            <source src="{% url 'generate_audio' verb.present.single_female %}" type="audio/mpeg">
-        </audio>
-        <hr>
-        {{pronoun.present.plural_male}} {{verb.present.plural_male}}
-        <audio controls>
-            <source src="{% url 'generate_audio' verb.present.plural_male %}" type="audio/mpeg">
-        </audio>
-        <hr>
-        {{pronoun.present.plural_female}} {{verb.present.plural_female}}
-        <audio controls>
-            <source src="{% url 'generate_audio' verb.present.plural_female %}" type="audio/mpeg">
-        </audio>
-        <hr>    
-    </div>
+    <h2>Infinitive</h2>
+    {% include 'includes/word_card.html' with hebrew=verb.infinitive russian=verb.translate %}
+    <hr>
+
+    <h2> Present </h2>
+    {% include 'includes/word_card.html' with hebrew=verb.present.single_male pronoun=pronoun.present.single_male %}
+    {% include 'includes/word_card.html' with hebrew=verb.present.single_female pronoun=pronoun.present.single_female %}
+    {% include 'includes/word_card.html' with hebrew=verb.present.plural_male pronoun=pronoun.present.plural_male%}
+    {% include 'includes/word_card.html' with hebrew=verb.present.plural_female pronoun=pronoun.present.plural_female%}
+    <hr>
+
     <div>
         <h2> Past </h2>
-        <h4> Single </h4>
-        <h4> Plural </h4>
+        <h3> Single </h3>
+            {% include 'includes/word_card.html' with hebrew=verb.past.single.first pronoun=pronoun.past.single.first %}
+            {% include 'includes/word_card.html' with hebrew=verb.past.single.second_m pronoun=pronoun.past.single.second_m %}
+            {% include 'includes/word_card.html' with hebrew=verb.past.single.second_f pronoun=pronoun.past.single.second_f %}
+            {% include 'includes/word_card.html' with hebrew=verb.past.single.third_m pronoun=pronoun.past.single.third_m %}
+            {% include 'includes/word_card.html' with hebrew=verb.past.single.third_f pronoun=pronoun.past.single.third_f %}
+        <h3> Plural </h3>
+            {% include 'includes/word_card.html' with hebrew=verb.past.plural.first pronoun=pronoun.past.plural.first %}
+            {% include 'includes/word_card.html' with hebrew=verb.past.plural.second_m pronoun=pronoun.past.plural.second_m %}
+            {% include 'includes/word_card.html' with hebrew=verb.past.plural.second_f pronoun=pronoun.past.plural.second_f %}
+            {% include 'includes/word_card.html' with hebrew=verb.past.plural.third pronoun=pronoun.past.plural.third %}
     </div>
+    <script src="{% static 'script.js' %}"></script>
 </body>
 </html>

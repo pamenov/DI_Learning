@@ -1,5 +1,30 @@
 import re
 
+PRONOUN = {
+    "present": {
+            "single_male": "אני, אתא, הוא",
+            "single_female": "אני, את, היא",
+            "plural_male": "אנחנו, אתם, חם",
+            "plural_female": "אנחנו, אתן, חן",
+    },
+    "past": {
+        "single": {
+            "first": "אני",
+            "second_m": "אתא",
+            "second_f": "את",
+            "third_m": "הוא",
+            "third_f": "היא",
+        },
+        "plural": {
+            "first": "אנחנו",
+            "second_m": "אתם",
+            "second_f": "אתן",
+            "third": "חם, חן"
+        }
+    }
+}
+
+
 VAV = "ו"
 TAV = "ת"
 MEM = "מ"
@@ -37,7 +62,7 @@ def get_present_forms(root, category):
         result = {
             "single_male": MEM + TAV + root,
             "single_female": MEM + TAV  + root + TAV,
-            "plural_male": MEM + TAV + YUD + MEM_SOFIT,
+            "plural_male": MEM + TAV + root + YUD + MEM_SOFIT,
             "plural_female": MEM + TAV + root + VAV + TAV,
         }
     if category == 'hифъиль':
@@ -176,8 +201,3 @@ def get_past_forms(root, category):
     if category == 'пуаль':
         pass
     return result
-
-#root = input()
-#print(get_infinitive(root, 'пааль'))
-#print(get_present_forms(root, 'пааль'))
-#print(get_past_forms(root, 'пааль'))

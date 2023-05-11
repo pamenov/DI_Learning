@@ -1,0 +1,12 @@
+<div class=word_card>
+    <div class="audio-player">
+        <button class="play-button">&#9658;</button>
+        <audio class="audio-element" src="{% url 'generate_audio' hebrew %}" type="audio/mpeg">
+        </audio>
+    </div>
+    {% if russian %}
+        {{ hebrew }}  -  {{ russian }}
+    {% elif pronoun %}
+        <span class=pronoun> {{ pronoun }} </span>  {{ hebrew }} 
+    {% endif %}
+</div>

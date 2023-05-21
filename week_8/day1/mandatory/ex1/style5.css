@@ -1,0 +1,8 @@
+#my_object {
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    height: 50px;
+    width: 50px;
+    background-color: green;
+}

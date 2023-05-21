@@ -13,7 +13,7 @@ function stepRight() {
         left = parseInt(obj.style.left)
     }
     if (left >= 350) {
-        clearInterval(interval)
+        obj.style.left = 0
     }
     const new_left = `${left + 10}px`
     obj.style.left = new_left

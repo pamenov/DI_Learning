@@ -1,0 +1,9 @@
+body {
+    background-color: balck;
+    text-align: center;
+}
+
+#character-description {
+    border: 3px yellow sold;
+    border-radius: 15px;
+}

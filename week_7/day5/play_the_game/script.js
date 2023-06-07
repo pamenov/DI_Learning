@@ -38,7 +38,8 @@ function playTheGame() {
         return 0;
     }
     let victory_count = 0;
-    while (victory_count < 4) {
+    while (victory_count < 3) {
+        console.log("im in while < 3")
         victory_count += oneRoundGame()
     }
     alert("out of chances")
@@ -48,10 +49,12 @@ function playTheGame() {
 function oneRoundGame() {
     let users_input = prompt("enter number from 0 to 10")
     if (!check_number(users_input)) {
+        console.log("not check_number")
         alert("Sorry its not a good number, bye");
         return 0;
     }
     let number = parseFloat(users_input)
+    console.log(number, "users input")
     let computerNumber = Math.round(Math.random() * 10)
     console.log(computerNumber)
     return compareNumbers(number, computerNumber)

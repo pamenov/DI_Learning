@@ -1,0 +1,4 @@
+PG_HOSTNAME = 'localhost'
+PG_USERNAME = 'postgres'
+PASSWORD = '111'
+DATABASE = 'Countries'
